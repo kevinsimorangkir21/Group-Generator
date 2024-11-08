@@ -46,7 +46,7 @@ function checkTimeAndLoadData() {
     const currentTime = new Date();
     const currentHour = currentTime.getHours();
 
-    if (currentHour >= 21) {
+    if (currentHour >= 20) {
         // Jika sudah jam 9 malam, load CSV dan tampilkan
         loadCSV();
     } else {
