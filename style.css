@@ -1,0 +1,113 @@
+/* Style untuk logo "Live" di kiri atas */
+.live-logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #ff3b3b;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+/* Titik bulat "Live" yang berkedip */
+.live-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin-right: 8px;
+    animation: blink 1s infinite;
+}
+
+/* Animasi berkedip */
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Dark Mode & Layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #bb86fc;
+    text-align: center;
+}
+
+.group-list {
+    margin-top: 20px;
+}
+
+.group {
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #bb86fc;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    transition: transform 0.3s ease;
+}
+
+.group:hover {
+    transform: scale(1.02);
+    background-color: #333;
+}
+
+h2 {
+    color: #bb86fc;
+}
+
+.member-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+.member-list li {
+    color: #e0e0e0;
+    padding: 5px 0;
+    border-bottom: 1px solid #444;
+}
+
+.member-list li:last-child {
+    border-bottom: none;
+}
+
+/* Style untuk pesan sebelum jam 9 malam */
+.message {
+    color: #bb86fc;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
