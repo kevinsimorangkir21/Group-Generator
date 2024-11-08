@@ -62,7 +62,7 @@ body {
 }
 
 h1 {
-    color: #bb86fc;
+    color: #60c17d;
     text-align: center;
 }
 
@@ -73,7 +73,7 @@ h1 {
 .group {
     margin: 10px 0;
     padding: 15px;
-    border: 1px solid #bb86fc;
+    border: 1px solid #60c17d;
     border-radius: 5px;
     background-color: #2a2a2a;
     transition: transform 0.3s ease;
@@ -85,7 +85,7 @@ h1 {
 }
 
 h2 {
-    color: #bb86fc;
+    color: #60c17d;
 }
 
 .member-list {
@@ -106,7 +106,7 @@ h2 {
 
 /* Style untuk pesan sebelum jam 9 malam */
 .message {
-    color: #bb86fc;
+    color: #60c17d;
     text-align: center;
     font-size: 1.2rem;
     margin-top: 20px;
