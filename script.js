@@ -41,20 +41,5 @@ function displayGroups(rows) {
     });
 }
 
-// Fungsi untuk cek waktu sekarang dan load data jika jam sudah mencapai 21:00
-function checkTimeAndLoadData() {
-    const currentTime = new Date();
-    const currentHour = currentTime.getHours();
-
-    if (currentHour >= 20) {
-        // Jika sudah jam 9 malam, load CSV dan tampilkan
-        loadCSV();
-    } else {
-        // Jika belum jam 9 malam, tampilkan pesan
-        const message = document.getElementById('message');
-        message.textContent = "Data kelompok akan tersedia pada pukul 21:00.";
-    }
-}
-
-// Panggil fungsi checkTimeAndLoadData saat halaman dimuat
-window.onload = checkTimeAndLoadData;
+// Panggil fungsi loadCSV saat halaman dimuat
+window.onload = loadCSV;
