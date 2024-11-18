@@ -43,3 +43,16 @@ function displayGroups(rows) {
 
 // Panggil fungsi loadCSV saat halaman dimuat
 window.onload = loadCSV;
+
+// Fungsi untuk toggle tema
+function toggleTheme() {
+    const body = document.body;
+    const button = document.querySelector('.theme-toggle');
+
+    // Toggle antara dark-mode dan light-mode
+    body.classList.toggle('dark-mode');
+    body.classList.toggle('light-mode');
+
+    // Ubah ikon pada button berdasarkan tema saat ini
+    button.textContent = body.classList.contains('light-mode') ? '☾' : '🌞';
+}

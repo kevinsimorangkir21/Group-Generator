@@ -1,31 +1,140 @@
-/* Style untuk logo "Live" di kiri atas */
+/* Reset and Fullscreen Layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    /* Menghilangkan scroll bar */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Theme Modes */
+body.dark-mode {
+    background: linear-gradient(135deg, #121212, #2a2a2a);
+    color: #e0e0e0;
+}
+
+body.light-mode {
+    background: linear-gradient(135deg, #f5f5f5, #ffffff);
+    color: #333;
+}
+
+/* Centralized Fullscreen Container */
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: rgba(30, 30, 30, 0.8);
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    border-radius: 0;
+    /* Full screen effect */
+    transition: background 0.3s ease;
+}
+
+/* Scrollbar Customization */
+.container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: #60c17d;
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #60c17d;
+}
+
+/* Group Styles */
+.group {
+    margin: 15px 0;
+    padding: 15px;
+    border: 1px solid #60c17d;
+    border-radius: 8px;
+    background: rgba(42, 42, 42, 0.9);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.group:hover {
+    transform: scale(1.05);
+    background: rgba(96, 193, 125, 0.2);
+}
+
+h2 {
+    color: #60c17d;
+}
+
+/* Member List */
+.member-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.member-list li {
+    padding: 5px 0;
+    border-bottom: 1px solid #444;
+}
+
+.member-list li:last-child {
+    border-bottom: none;
+}
+
+/* Message */
+.message {
+    color: #60c17d;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+/* Live Logo */
 .live-logo {
     position: fixed;
-    top: 20px;
-    left: 20px;
-    background-color: #ff3b3b;
-    color: #ffffff;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(45deg, #ff3b3b, #ff7b7b);
+    color: #fff;
     font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 10px 15px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    font-size: 1.2rem;
     z-index: 1000;
 }
 
-/* Titik bulat "Live" yang berkedip */
 .live-dot {
-    width: 10px;
-    height: 10px;
-    background-color: #ffffff;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
     border-radius: 50%;
-    margin-right: 8px;
+    margin-right: 10px;
     animation: blink 1s infinite;
 }
 
-/* Animasi berkedip */
+/* Blinking animation */
 @keyframes blink {
 
     0%,
@@ -38,76 +147,65 @@
     }
 }
 
-/* Dark Mode & Layout */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: #e0e0e0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    margin: 0;
-    padding: 20px;
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #1e1e1e;
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, #ffdd57, #ffc107);
+    color: #333;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
 }
 
-h1 {
-    color: #60c17d;
-    text-align: center;
+.theme-toggle:hover {
+    background: linear-gradient(45deg, #ffc107, #ffdd57);
 }
 
-.group-list {
-    margin-top: 20px;
+/* Light Mode Adjustments */
+body.light-mode .container {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.2);
 }
 
-.group {
-    margin: 10px 0;
-    padding: 15px;
-    border: 1px solid #60c17d;
-    border-radius: 5px;
-    background-color: #2a2a2a;
-    transition: transform 0.3s ease;
+body.light-mode .group {
+    background: rgba(249, 249, 249, 0.9);
+    border: 1px solid #333;
 }
 
-.group:hover {
-    transform: scale(1.02);
-    background-color: #333;
+body.light-mode h1,
+body.light-mode h2 {
+    color: #007bff;
 }
 
-h2 {
-    color: #60c17d;
+body.light-mode .live-logo {
+    background: linear-gradient(45deg, #007bff, #00bfff);
 }
 
-.member-list {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0;
+body.light-mode .member-list li {
+    color: #000;
 }
 
-.member-list li {
-    color: #e0e0e0;
-    padding: 5px 0;
-    border-bottom: 1px solid #444;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
 
-.member-list li:last-child {
-    border-bottom: none;
-}
+    .theme-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
 
-/* Style untuk pesan sebelum jam 9 malam */
-.message {
-    color: #60c17d;
-    text-align: center;
-    font-size: 1.2rem;
-    margin-top: 20px;
+    h1 {
+        font-size: 2rem;
+    }
 }
